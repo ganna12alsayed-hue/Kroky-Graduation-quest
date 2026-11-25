@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kroky's Graduation Quest</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./arcade.css">
+</head>
+<body>
+  <main>
+    <header>
+      <small>INTERIOR DESIGN · RIR4108</small>
+      <h1>Kroky’s Graduation Quest</h1>
+      <p>One task at a time. One coffee at a time. One semester closer.</p>
+      <div id="overall"></div>
+    </header>
+    <nav class="mode-tabs" role="tablist" aria-label="Site sections">
+      <button id="quest-tab" type="button" role="tab" aria-controls="quest-panel" aria-selected="true">Graduation Quest</button>
+      <button id="arcade-tab" type="button" role="tab" aria-controls="arcade-panel" aria-selected="false" tabindex="-1"><span lang="ar" dir="rtl">أحلام العصر</span> | A7lam El 3asr</button>
+    </nav>
+    <div id="quest-panel" role="tabpanel" aria-labelledby="quest-tab">
+    <nav id="weeks" aria-label="Weeks"></nav>
+    <section id="mission"></section>
+    <div id="quests"></div>
+    <footer>
+      Progress is saved on this browser when storage is available.
+      <span id="storage"></span>
+      <button id="reset" type="button">Reset this week</button>
+    </footer>
+    </div>
+    <div id="arcade-panel" role="tabpanel" aria-labelledby="arcade-tab" hidden>
+      <section class="arcade-card" aria-labelledby="game-title">
+        <div class="arcade-heading">
+          <h2 id="game-title">RUN, KROKY, RUN!</h2>
+          <p>Jump the book stacks before the Submission Monster catches you.</p>
+        </div>
+        <div class="arcade-hud">
+          <div><span>Distance</span><strong id="run-score">0 m</strong></div>
+          <div><span>Best</span><strong id="run-best">0 m</strong></div>
+          <div class="chase-meter"><span>Hits</span><strong id="run-hits">0 / 3</strong></div>
+        </div>
+        <div class="run-stage">
+          <canvas id="run-track" tabindex="0" aria-label="Runner track" aria-describedby="run-help"></canvas>
+          <div id="run-message" class="run-message" hidden>
+            <h3 id="run-message-title"></h3>
+            <p id="run-message-copy"></p>
+          </div>
+        </div>
+        <p id="run-status" class="sr-only" role="status"></p>
+        <div class="arcade-controls">
+          <p id="run-help"><kbd>Space</kbd> or <kbd>↑</kbd> to jump. On touch screens, tap the track or Jump.</p>
+          <button id="run-action" type="button" disabled>Start run</button>
+        </div>
+      </section>
+    </div>
+  </main>
+  <aside class="scene" aria-label="Kroky’s adventure">
+    <div class="scene-inner">
+      <div class="scene-bar">
+        <p id="speech" role="status"></p>
+        <button id="scene-toggle" type="button" aria-expanded="true" aria-controls="world">Hide scene</button>
+      </div>
+      <div class="world" id="world">
+        <ol class="milestones" id="milestones" aria-label="Journey milestones"></ol>
+        <div class="journey-lane" aria-hidden="true">
+        <div class="road"></div>
+        <div id="story-prop"></div>
+        <div id="journey-prop"></div>
+        <div id="traveler"><img id="kroky" alt="" src="./assets/default.png"></div>
+        <div id="action-prop"></div>
+        <div id="confetti"></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <script src="./data.js"></script>
+  <script src="./script.js"></script>
+  <script src="./arcade.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+.mode-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid #d7cbea;
+  border-radius: 13px;
+  background: #f5effd;
+}
+.mode-tabs button { flex: 1 1 140px; padding: 10px; background: transparent; }
+.mode-tabs button[aria-selected="true"] { background: #17355e; color: white; }
+.arcade-card {
+  padding: clamp(13px, 3vw, 24px);
+  background: #fff9ee;
+  border: 1px solid #e8dcc9;
+}
+.arcade-heading h2 {
+  margin: 0;
+  font-size: clamp(1.65rem, 5vw, 3.1rem);
+  font-weight: 900;
+  letter-spacing: -.055em;
+  line-height: 1;
+}
+.arcade-heading p { margin: 8px 0 16px; color: #4b4463; }
+.arcade-hud {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid #d7c9e8;
+  border-radius: 11px 11px 0 0;
+  background: #d7c9e8;
+}
+.arcade-hud div { min-width: 0; display: grid; gap: 2px; padding: 7px 10px; background: #f5effd; }
+.arcade-hud span { color: #524371; font-size: .76rem; font-weight: 700; }
+.arcade-hud strong { font-size: 1rem; font-variant-numeric: tabular-nums; }
+.arcade-hud .chase-meter { background: #ffedba; }
+.run-stage {
+  position: relative;
+  border: 1px solid #d7c9e8;
+  border-top: 0;
+  border-radius: 0 0 11px 11px;
+  background: #eee5fa;
+}
+#run-track { display: block; width: 100%; height: clamp(200px, 34vw, 275px); border-radius: 0 0 10px 10px; }
+.run-stage.playing #run-track { touch-action: none; cursor: pointer; }
+.run-message {
+  position: absolute;
+  inset: 10px 10px auto;
+  width: fit-content;
+  max-width: calc(100% - 20px);
+  margin: auto;
+  padding: 9px 12px;
+  text-align: center;
+  background: #fff9ee;
+  border: 1px solid #c9b8dc;
+  border-radius: 10px;
+  pointer-events: none;
+}
+.run-message h3 { margin: 0; font-size: clamp(.91rem, 2.8vw, 1.14rem); }
+.run-message p { margin: 3px 0 0; font-size: .8rem; }
+.arcade-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; }
+.arcade-controls p { margin: 0; color: #4b4463; font-size: .83rem; }
+#run-action { flex: 0 0 auto; min-height: 44px; padding: 10px 15px; background: #17355e; color: white; }
+#run-action:disabled { cursor: wait; opacity: .6; }
+kbd { padding: 1px 4px; border: 1px solid #c9b8dc; border-radius: 4px; background: white; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
